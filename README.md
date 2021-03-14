@@ -2,6 +2,9 @@
 
 Flutter QR Scan Plugin.
 
+### Example
+[flutter_qr_scan](https://github.com/Gentleflow/qr_scan/tree/master/screenshot/flutter_qr_scan.gif)
+
 - support qr scan
 - support flashlight
 
