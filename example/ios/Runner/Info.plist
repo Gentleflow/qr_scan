@@ -29,9 +29,9 @@
 	<key>io.flutter.embedded_views_preview</key>
     <true/>
     <key>NSCameraUsageDescription</key>
-    <string>使用相机权限扫描二维码</string>
+    <string>Camera Permissions</string>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>访问照片库权限选择二维码</string>
+    <string>Photo Gallery Permissions</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

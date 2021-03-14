@@ -43,12 +43,12 @@ class QrScanWidgetState extends State<QrScanWidget>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     switch (state) {
-      case AppLifecycleState.inactive: // 处于这种状态的应用程序应该假设它们可能在任何时候暂停。
+      case AppLifecycleState.inactive:
         break;
-      case AppLifecycleState.resumed: // 应用程序可见，前台
+      case AppLifecycleState.resumed:
         _permissionStatus();
         break;
-      case AppLifecycleState.paused: // 应用程序不可见，后台
+      case AppLifecycleState.paused:
         break;
       case AppLifecycleState.detached:
         break;
@@ -166,7 +166,19 @@ class QrScanWidgetState extends State<QrScanWidget>
               width: constraints.maxWidth,
               height: constraints.maxHeight,
               callback: _onCreateController,
-            ) : Container(),
+            ) : Container(
+              child: QrReaderView(
+                width: 300,
+                height: 300,
+                callback: (controller){
+                  controller.startScan((data,_){
+                    // scan success
+                  });
+                  controller.stopScan();
+                  controller.setFlashlight();
+                },
+              ),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
